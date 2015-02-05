@@ -13,9 +13,9 @@ module.exports = function(crompy) {
             config: {
                 host : 'localhost',
                 port : 8086,
-                username : 'dbuser',
-                password : 'f4ncyp4ass',
-                database : 'my_database'
+                username : 'root',
+                password : 'root',
+                database : 'metrics'
             }
         },
         collectors: [
@@ -25,7 +25,7 @@ module.exports = function(crompy) {
 
     // Set collectors configuration
     crompy.setConfig('diskspace', {
-        interval: 1000
+        interval: 5000
     });
 
 };

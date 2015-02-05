@@ -8,7 +8,8 @@ module.exports = function(collector, config) {
 
     discspace.drives(function(err, drives){
         discspace.drivesDetail(drives, function(err, drivesDetail){
-            collector.publish('COUNTER', drivesDetail);
+            collector.publish('diskspace.used', drivesDetail[0].used);
+            collector.publish('diskspace.available', drivesDetail[0].available);
         });
     });
 
